@@ -73,9 +73,6 @@ variable "slo_global_vn" {
 
 # AWS
 
-variable "aws_vpc_name" {}
-variable "aws_vpc_cidr" {}
-variable "aws_owner_tag" {}
 
 variable "aws_slo_subnet" {}
 variable "aws_sli_subnet" {}
@@ -93,3 +90,8 @@ variable "ec2_disk_size" {
   type    = number
   default = 80
 }
+variable "aws_vpc_id" {}
+variable "aws_owner_tag" {}
+variable "aws_sg_allow_slo_id" {}
+variable "aws_sg_allow_sli_id" {}
+variable "aws_internet_gateway_id" {}

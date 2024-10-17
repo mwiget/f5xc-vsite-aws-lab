@@ -34,7 +34,7 @@ resource "aws_network_interface" "sm_slo_eni" {
   depends_on      = [ aws_subnet.slo ]
   count           = 1
   subnet_id       = element(aws_subnet.slo[*].id, count.index)
-  security_groups = [ resource.aws_security_group.allow_slo_traffic.id ]
+  security_groups = [ var.aws_sg_allow_slo_id ]
   tags = {
     Name = format("%s-pub-eni-%d", var.f5xc_cluster_name, count.index)
     Creator = var.aws_owner_tag
@@ -45,7 +45,7 @@ resource "aws_network_interface" "sm_sli_eni" {
   depends_on      = [ aws_subnet.sli ]
   count           = 1
   subnet_id       = element(aws_subnet.sli[*].id, count.index)
-  security_groups = [ resource.aws_security_group.allow_sli_traffic.id ]
+  security_groups = [ var.aws_sg_allow_sli_id ]
   source_dest_check = false
 
   tags = {

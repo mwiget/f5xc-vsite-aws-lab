@@ -3,7 +3,7 @@ resource "aws_instance" "workload_vm" {
   ami                         = data.aws_ami.latest-ubuntu.id
   instance_type               = "t3.micro"
   user_data_replace_on_change = true
-  security_groups             = [ resource.aws_security_group.allow_sli_traffic.id ]
+  security_groups             = [ var.aws_sg_allow_sli_id ]
   subnet_id                   = aws_subnet.sli[count.index].id   # TODO needs fixing for multiple az
   associate_public_ip_address = true
   private_ip                  = var.aws_sli_workload_ip

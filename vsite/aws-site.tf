@@ -10,12 +10,15 @@ module "aws-node" {
   aws_availability_zone     = element(var.aws_availability_zones, count.index)
   aws_instance_type         = var.aws_instance_type
   aws_ami_name              = var.aws_ami_name
-
-  aws_vpc_name              = format("%s-vpc", var.f5xc_vsite_name)
-  aws_vpc_cidr              = var.aws_vpc_cidr
+  aws_vpc_id                = aws_vpc.vpc.id
   aws_owner_tag             = var.aws_owner_tag
 
   aws_slo_subnet            = var.aws_slo_subnets[count.index]
   aws_sli_subnet            = var.aws_sli_subnets[count.index]
   aws_sli_workload_ip       = var.aws_sli_workload_ip[count.index]
+  aws_internet_gateway_id   = aws_internet_gateway.gateway.id
+
+  aws_sg_allow_slo_id       = resource.aws_security_group.allow_slo_traffic.id 
+  aws_sg_allow_sli_id       = resource.aws_security_group.allow_sli_traffic.id 
+
 }
