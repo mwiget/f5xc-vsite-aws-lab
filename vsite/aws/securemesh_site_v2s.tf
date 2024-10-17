@@ -5,7 +5,10 @@ resource "restapi_object" "site" {
   data          = jsonencode({
     "metadata": {
       "name": var.f5xc_cluster_name,
-      "disable": false
+      "disable": false,
+      "labels": {
+        "virtual_site": var.f5xc_virtual_site
+      }
     },
     "spec": {
       "aws": {

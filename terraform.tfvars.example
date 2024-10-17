@@ -1,8 +1,6 @@
 project_prefix     = "prefix"
 ssh_public_key     = "<ssh public key>"
 
-f5xc_namespace      = "mynamespace"   # must exist
-
 # AWS service-plm
 aws_access_key      = "<access key>"
 aws_secret_key      = "<access secret>"

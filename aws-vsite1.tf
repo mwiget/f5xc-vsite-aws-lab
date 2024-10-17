@@ -4,7 +4,6 @@ module "vsite1" {
   aws_instance_type         = "t3.xlarge"
   aws_region                = "eu-north-1"
   aws_ami_name              = var.aws_ami_name
-  f5xc_namespace            = var.f5xc_namespace
   ssh_public_key            = var.ssh_public_key
 
   providers       = {

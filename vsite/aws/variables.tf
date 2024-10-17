@@ -1,4 +1,5 @@
 variable "f5xc_cluster_name" {}
+variable "f5xc_virtual_site" {}
 
 variable "ssh_public_key" {}
 variable "master_node_count" {

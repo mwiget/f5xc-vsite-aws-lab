@@ -2,6 +2,7 @@ module "aws-node" {
   count                     = length(var.aws_slo_subnets)
   source                    = "./aws"
   f5xc_cluster_name         = format("%s%s",var.f5xc_vsite_name, element(var.aws_availability_zones, count.index))
+  f5xc_virtual_site         = var.f5xc_vsite_name
 
   ssh_public_key            = var.ssh_public_key
 

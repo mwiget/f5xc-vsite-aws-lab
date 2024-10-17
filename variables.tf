@@ -31,7 +31,3 @@ variable "aws_owner_tag" {
 variable "aws_ami_name" {
   type = string
 }
-variable "f5xc_namespace" {
-  type = string
-  default = "mynamespace"
-}
