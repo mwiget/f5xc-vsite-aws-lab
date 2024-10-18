@@ -95,3 +95,7 @@ variable "aws_owner_tag" {}
 variable "aws_sg_allow_slo_id" {}
 variable "aws_sg_allow_sli_id" {}
 variable "aws_internet_gateway_id" {}
+variable "f5xc_tunnel_type" {
+  type    = string
+  default = "SITE_TO_SITE_TUNNEL_IPSEC_OR_SSL"
+}

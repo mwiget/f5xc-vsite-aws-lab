@@ -5,6 +5,7 @@ module "aws-node" {
   f5xc_virtual_site         = var.f5xc_vsite_name
 
   ssh_public_key            = var.ssh_public_key
+  f5xc_tunnel_type          = var.f5xc_tunnel_type
 
   aws_region                = var.aws_region
   aws_availability_zone     = element(var.aws_availability_zones, count.index)

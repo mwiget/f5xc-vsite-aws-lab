@@ -47,7 +47,7 @@ resource "restapi_object" "site" {
         "default_config": {},
         "default_sli_config": {}
       },
-      "tunnel_type": "SITE_TO_SITE_TUNNEL_SSL",
+      "tunnel_type": "${var.f5xc_tunnel_type}",
       "re_select": {
         "geo_proximity": {}
       },
