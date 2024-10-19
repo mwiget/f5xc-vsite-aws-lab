@@ -25,6 +25,6 @@ system_info:
     groups: [docker]
 
 runcmd:
-- [ sh, -c, docker run --restart always -p 80:80 -e F5DEMO_APP=website -e F5DEMO_APP=text f5devcentral/f5-demo-httpd:nginx ]
+- [ sh, -c, docker run -d --restart always -p 80:80 -e F5DEMO_APP=website -e F5DEMO_APP=text f5devcentral/f5-demo-httpd:nginx ]
 
 
